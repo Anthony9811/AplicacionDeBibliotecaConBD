@@ -12,9 +12,11 @@ namespace AplicacionDeBiblioteca.UI.Models
         public String Nombre { get; set; }
         public String Autor { get; set; }
 
+        [Display(Name = "Fecha De Publicación")]
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         public DateTime FechaDePublicacion { get; set; }
-
+        
+        [Range(0,1,ErrorMessage ="El libro debe tener estado disponible (1)")]
         public int Estado { get; set; }
         public int ID { get; set; }    
     }
